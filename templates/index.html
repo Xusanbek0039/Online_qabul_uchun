@@ -1,0 +1,135 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" class="no-js" >
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IT Creative - Online qabul</title>
+
+    <script>
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+    </script>
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="{% static '/css/demo.css' %}">
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="{% static '/image/png' %}" sizes="32x32" href="{% static '/icon/favicon-32x32.png' %}">
+    <link rel="icon" type="{% static '/image/png' %}" sizes="16x16" href="{% static '/icon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static '/site.webmanifest' %}">
+
+</head>
+
+<body id="top">
+
+
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader"></div>
+    </div>
+
+
+    <!-- header 
+    ================================================== -->
+    <header>
+        <div class="row">
+            <div class="column lg-12 text-center">
+
+                <h1>IT Creative Group</h1>
+
+                <p class="lead">
+                Bu yerga qabulga yozilgan hamda o'qishni boshlagan bollar uchun qisqacha fikrlar yoziladi 
+                </p>
+
+            </div>
+        </div>
+    </header> <!-- end header -->
+
+
+    <!-- main content
+    ================================================== -->
+    <main>
+        <div class="row block-lg-one-third block-md-one-half block-tab-whole">
+           
+            <div class="column entry">
+                <div class="entry__thumb">
+                    <a href="{% url 'python_course' %}" title="Full-Stack Python Kursi uchun qabul">
+                        <img src="{% static '/images/demo/khronos-static.jpg' %}" srcset="{% static '/images/demo/khronos-static.jpg' %} 1x, {% static '/images/demo/khronos-static@2x.jpg' %} 2x" alt="">
+                    </a>
+                </div>
+                <div class="entry__title">
+                    <h3>Full-Stack Python</h3>
+                </div>
+            </div>
+
+            <div class="column entry">
+                <div class="entry__thumb">
+                    <a href="{% url 'django' %}" title="Full-Stack Django Kursi uchun qabul">
+                        <img src="{% static '/images/demo/khronos-slides.jpg' %}" srcset="{% static '/images/demo/khronos-slides.jpg' %} 1x, {% static '/images/demo/khronos-slides@2x.jpg' %} 2x" alt="">
+                    </a>
+                </div>
+                <div class="entry__title">
+                    <h3>Full-Stack Django Framework</h3>
+                </div>
+            </div>
+
+            <div class="column entry">
+                <div class="entry__thumb">
+                    <a href="{% url 'flask' %}" title="Full-Stack Flask Kursi uchun qabul">
+                        <img src="{% static '/images/demo/khronos-particles.jpg' %}" srcset="{% static '/images/demo/khronos-particles.jpg' %} 1x, {% static '/images/demo/khronos-particles@2x.jpg' %} 2x" alt="">
+                    </a>
+                </div>
+                <div class="entry__title">
+                    <h3>Full-Stack Flask Framework</h3>
+                </div>
+            </div>
+            
+        </div>
+    </main> <!--  end main -->
+
+    <!-- Java Script
+    ================================================== -->
+    <script>
+        
+        (function(html) {
+
+            'use strict';
+
+            html.className = html.className.replace(/\bno-js\b/g, '') + 'js';
+
+            const body = document.querySelector('body');
+            const preloader = document.querySelector('#preloader');
+
+            if (!preloader) return;
+
+            window.addEventListener('load', function() {
+
+                body.classList.remove('ss-preload');
+                body.classList.add('ss-loaded');
+
+                preloader.addEventListener('transitionend', function afterTransition(e) {
+                    if (e.target.matches('#preloader'))  {
+                        body.classList.add('ss-show');
+                        e.target.style.display = 'none';
+                        preloader.removeEventListener(e.type, afterTransition);
+                    }
+                });
+
+            });
+
+        })(document.documentElement);
+    
+    </script>
+
+</body>
+
+</html>
